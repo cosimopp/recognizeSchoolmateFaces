@@ -1,4 +1,5 @@
 #! /usr/bin/python3
+#USAGE: python3 downloadPosts.py "MY_IG_USERNAME" "MY_IG_PASSWORD" "IG_SCHOOL_PROFILE"
 import instaloader
 import threading
 import sys
@@ -12,7 +13,7 @@ def printTime():
 class IG:
     def __init__(self):
         #quiet=True
-        self.L = instaloader.Instaloader(quiet=True,
+        self.L = instaloader.Instaloader(
                             save_metadata=False,
                             download_pictures=True,
                             download_videos=False,
