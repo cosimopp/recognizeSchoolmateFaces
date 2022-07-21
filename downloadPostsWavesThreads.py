@@ -1,5 +1,5 @@
-+#! /usr/bin/python3
-+#USAGE: python3 downloadPosts.py "MY_IG_USERNAME" "MY_IG_PASSWORD" "IG_SCHOOL_PROFILE"
+#! /usr/bin/python3
+#USAGE: python3 downloadPosts.py "MY_IG_USERNAME" "MY_IG_PASSWORD" "IG_SCHOOL_PROFILE"
 import instaloader
 import threading
 import sys
