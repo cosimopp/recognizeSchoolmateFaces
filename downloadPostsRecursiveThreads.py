@@ -11,7 +11,7 @@ def printGetTime():
     return currentTime
 
 def download(followers):
-
+    #same MAX_THREADS IG instances 4ever
     global pubblic
     global private
 
@@ -33,8 +33,7 @@ def download(followers):
 
 def getFollowers(username):
     #returns followers list
-    #temporary instaloader instance to get followers. Credentials needed
-    #only here
+    #temporary instaloader instance to get followers. Credentials needed only here
     myUsername = sys.argv[1] 
     myPassword = sys.argv[2]
 
@@ -49,7 +48,7 @@ def getFollowers(username):
 
 startTime = printGetTime()
 
-MAX_PER_THREAD = 30
+MAX_PER_THREAD = 30 #virtually useless with recursive threads
 MAX_THREADS = 3
 
 pubblic = 0
@@ -113,7 +112,7 @@ class IG:
                 # print(post.tagged_users)
                 self.L.download_post(post, profile.username)
                 count+=1
-            print(f"\n{profile.username}: {count}\n")
+            print(f"\nOK {profile.username}: {count}\n")
 
         # except instaloader.exceptions.LoginRequiredException: 
         except: print(f"\nEXCEPTION {profile.username}: {count}\n")
@@ -141,7 +140,7 @@ class IG:
                 private+=1
                 print(f"{profile.username} either private or no posts")
 
-        # for thread in threads: thread.start()
+        # one thread for each toDownload user 
         for thread in threads: thread.join()
 
         nextFollowers = self.getNextFollowers()
